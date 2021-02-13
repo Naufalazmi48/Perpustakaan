@@ -10,7 +10,10 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Book;
-import repository.Repository;
+import repository.BookRepository;
+import repository.UserRepository;
+import repository.local.ConnectionDatabase;
+import repository.local.MySqlConnection;
 
 /**
  *
@@ -19,11 +22,12 @@ import repository.Repository;
 public class Peminjaman extends javax.swing.JFrame {
 
     private final BorrowInterface borrowInf;
+    private final ConnectionDatabase connectionDatabase = new MySqlConnection();
     private String nimUser = null;
 
-    public Peminjaman(Repository repo) {
+    public Peminjaman() {
         initComponents();
-        borrowInf = new BorrowImpl(repo);
+        borrowInf = new BorrowImpl(new UserRepository(connectionDatabase),new BookRepository(connectionDatabase));
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 

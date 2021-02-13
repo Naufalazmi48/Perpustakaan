@@ -5,12 +5,15 @@
  */
 package ui.history;
 
+import model.History;
+
 import javax.swing.JTable;
+import java.util.List;
 
 /**
  *
  * @author MATRIX COMPUTER
  */
 public interface HistoryInterface {
-    public void read(JTable table);
+     List<History> read();
 }

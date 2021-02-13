@@ -7,8 +7,13 @@ package ui.book;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 import model.Book;
-import repository.Repository;
+import repository.BookRepository;
+import repository.local.MySqlConnection;
+
+import java.util.List;
 
 /**
  *
@@ -19,21 +24,58 @@ public class Buku extends javax.swing.JFrame {
     private Book callback = null;
     private final BookInterface bookInf;
 
-    public Buku(Repository repo) {
+    public Buku() {
         initComponents();
-        bookInf = new BookImpl(repo);
-        bookInf.read(tb_book);
+        bookInf = new BookImpl(new BookRepository(new MySqlConnection()));
+        read(bookInf.read());
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
+private void read(List<Book>bookList){
+    DefaultTableModel model = (DefaultTableModel) tb_book.getModel();
+    for (int i = model.getRowCount() - 1; i >= 0; i--) {
+        model.removeRow(i);
+    }
+    for (Book book : bookList) {
+        if (book.getStock() > 0) {
+            Object[] tempRow = new Object[6];
+            tempRow[0] = book.getTitle();
+            tempRow[1] = book.getAuthor();
+            tempRow[2] = book.getYear();
+            tempRow[3] = book.getPublisher();
+            tempRow[4] = book.getStock();
+            tempRow[5] = book.getId();
+            model.addRow(tempRow);
+        }
+    }
+    tb_book.setModel(model);
+}
+
+private void search(Book book){
+    if (book != null) {
+        DefaultTableModel model = (DefaultTableModel) tb_book.getModel();
+        for (int i = model.getRowCount() - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        Object[] tempRow = new Object[6];
+        tempRow[0] = book.getTitle();
+        tempRow[1] = book.getAuthor();
+        tempRow[2] = book.getYear();
+        tempRow[3] = book.getPublisher();
+        tempRow[4] = book.getStock();
+        tempRow[5] = book.getId();
+        model.addRow(tempRow);
+        tb_book.setModel(model);
+    }
+}
 
     private Book getResult() {
         Book book = new Book();
         book.setTitle(tf_title.getText());
         book.setAuthor(tf_author.getText());
         book.setPublisher(tf_publish.getText());
-        book.setYear(Integer.valueOf(tf_year.getText()));
-        book.setStock(Integer.valueOf(tf_total.getText()));
+        book.setYear(Integer.parseInt(tf_year.getText()));
+        book.setStock(Integer.parseInt(tf_total.getText()));
         return book;
     }
 
@@ -99,7 +141,7 @@ public class Buku extends javax.swing.JFrame {
                 "Judul Buku", "Pengarang", "Tahun Terbit", "Penerbit", "Jumlah Buku", "Kode Buku"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
+            final boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
             };
 
@@ -262,7 +304,7 @@ public class Buku extends javax.swing.JFrame {
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
         if (!invalid() && callback == null) {
             bookInf.create(getResult());
-            bookInf.read(tb_book);
+            read(bookInf.read());
             clearUI();
         } else if (callback != null) {
             JOptionPane.showMessageDialog(null, "Data ini telah tersedia");
@@ -276,7 +318,7 @@ public class Buku extends javax.swing.JFrame {
         if (!invalid()) {
             if (bookInf.delete(callback.getId())) {
                 callback = null;
-                bookInf.read(tb_book);
+                read(bookInf.read());
             }
                 clearUI();
         } else {
@@ -288,7 +330,7 @@ public class Buku extends javax.swing.JFrame {
         if (!invalid()) {
             if (bookInf.update(getResult(), callback.getId())) {
                 callback = null;
-                bookInf.read(tb_book);
+                read(bookInf.read());
             }
                 clearUI();
         } else {
@@ -299,9 +341,9 @@ public class Buku extends javax.swing.JFrame {
     private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
         if (!tf_searchbook.getText().isEmpty()) {
             try {
-                bookInf.search(tb_book, Integer.valueOf(tf_searchbook.getText()));
+                search(bookInf.search(Integer.parseInt(tf_searchbook.getText())));
             } catch (Exception e) {
-                bookInf.search(tb_book, tf_searchbook.getText());
+                search(bookInf.search(Integer.parseInt(tf_searchbook.getText())));
             }
         } else {
             JOptionPane.showMessageDialog(null, "Masukan nim di dalam kolom pencarian");
@@ -310,7 +352,7 @@ public class Buku extends javax.swing.JFrame {
 
     private void tf_searchbookKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_searchbookKeyReleased
         if (tf_searchbook.getText().isEmpty()) {
-            bookInf.read(tb_book);
+            read(bookInf.read());
         }
     }//GEN-LAST:event_tf_searchbookKeyReleased
 
@@ -347,7 +389,7 @@ public class Buku extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

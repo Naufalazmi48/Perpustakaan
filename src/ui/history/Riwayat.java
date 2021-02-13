@@ -6,7 +6,13 @@
 package ui.history;
 
 import javax.swing.JFrame;
-import repository.Repository;
+import javax.swing.table.DefaultTableModel;
+
+import model.History;
+import repository.HistoryRepository;
+import repository.local.MySqlConnection;
+
+import java.util.List;
 
 /**
  *
@@ -16,11 +22,28 @@ public class Riwayat extends javax.swing.JFrame {
 
     private final HistoryInterface historyInf;
     
-    public Riwayat(Repository repo) {
+    public Riwayat() {
         initComponents();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        historyInf = new HistoryImpl(repo);
-        historyInf.read(tb_history);
+        historyInf = new HistoryImpl(new HistoryRepository(new MySqlConnection()));
+        read(historyInf.read());
+    }
+
+    private void read(List<History>historyList){
+        DefaultTableModel model = (DefaultTableModel) tb_history.getModel();
+        for (int i = model.getRowCount() - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        for (History history : historyList) {
+            Object tempRow[] = new Object[5];
+            tempRow[0] = history.getBook_title();
+            tempRow[1] = history.getUser_name();
+            tempRow[2] = history.getDate();
+            tempRow[3] = history.getStatus();
+            tempRow[4] = history.getAdmin_name();
+            model.addRow(tempRow);
+        }
+        tb_history.setModel(model);
     }
 
     /**
@@ -95,7 +118,7 @@ public class Riwayat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
-        historyInf.read(tb_history);
+        read(historyInf.read());
     }//GEN-LAST:event_refreshActionPerformed
 
     /**

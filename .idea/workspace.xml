@@ -1,6 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="df69508f-eee8-489c-b574-ae0391064577" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/BookDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/repository/Repository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/UserWithBookDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/BookImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/BookImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/HistoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/HistoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/Riwayat.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/Riwayat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/MemberImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/MemberImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/BookDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/RepositoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserWithBookDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sign/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sign/LoginImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign/LoginImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/book/BookImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/book/BookImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/book/BookInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/book/BookInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/book/Buku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/book/Buku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/borrow/BorrowImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/borrow/BorrowImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/borrow/Peminjaman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/borrow/Peminjaman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/history/HistoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/history/HistoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/history/HistoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/history/HistoryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/history/Riwayat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/history/Riwayat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/member/Anggota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/member/Anggota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/member/MemberImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/member/MemberImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/member/MemberInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/member/MemberInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/returnbook/Pengembalian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/returnbook/Pengembalian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/returnbook/ReturnImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/returnbook/ReturnImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1m2VRSTcSWVPvbh0l1EBmyqoCFX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df69508f-eee8-489c-b574-ae0391064577" name="Default Changelist" comment="" />
+      <created>1608691665143</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608691665143</updated>
+      <workItem from="1613032962160" duration="37000" />
+      <workItem from="1613033038392" duration="1488000" />
+      <workItem from="1613035580669" duration="187000" />
+      <workItem from="1613035820788" duration="2713000" />
+      <workItem from="1613107572947" duration="1940000" />
+      <workItem from="1613174222729" duration="5036000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

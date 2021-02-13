@@ -5,7 +5,8 @@
  */
 package sign;
 
-import repository.Repository;
+
+import repository.IUserRepository;
 
 /**
  *
@@ -13,9 +14,9 @@ import repository.Repository;
  */
 public class LoginImpl implements LoginInterface {
 
-    private final Repository repo;
+    private final IUserRepository repo;
 
-    public LoginImpl(Repository repo) {
+    public LoginImpl(IUserRepository repo) {
         this.repo = repo;
     }
 

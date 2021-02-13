@@ -7,97 +7,51 @@ package ui.book;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
 import model.Book;
-import repository.Repository;
+import repository.IBookRepository;
+
+import java.util.List;
 
 /**
- *
  * @author MATRIX COMPUTER
  */
 public class BookImpl implements BookInterface {
 
-    private final Repository repo;
+    private final IBookRepository bookRepository;
 
-    public BookImpl(Repository repo) {
-        this.repo = repo;
+    public BookImpl(IBookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
+
     @Override
-    public void read(JTable table) {
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-        for (int i = model.getRowCount() - 1; i >= 0; i--) {
-            model.removeRow(i);
-        }
-        DefaultTableModel dtm = model;
-        for (Book book : repo.showAllBook()) {
-            if (book.getStock() > 0) {
-                Object tempRow[] = new Object[6];
-                tempRow[0] = book.getTitle();
-                tempRow[1] = book.getAuthor();
-                tempRow[2] = book.getYear();
-                tempRow[3] = book.getPublisher();
-                tempRow[4] = book.getStock();
-                tempRow[5] = book.getId();
-                dtm.addRow(tempRow);
-            }
-        }
-        table.setModel(dtm);
+    public List<Book> read() {
+        return bookRepository.showAllBook();
     }
 
     @Override
     public boolean update(Book book, int oldId) {
-        return repo.updateBook(book, oldId);
+        return bookRepository.update(book, oldId);
     }
 
     @Override
     public boolean create(Book book) {
-        return repo.insertBook(book);
+        return bookRepository.create(book);
     }
 
     @Override
     public boolean delete(int idBook) {
-        return repo.deleteBook(idBook);
+        return bookRepository.delete(idBook);
     }
 
     @Override
-    public void search(JTable table, int idBook) {
-        Book book = repo.searchBook(idBook);
-        if (book != null) {
-            DefaultTableModel model = (DefaultTableModel) table.getModel();
-            for (int i = model.getRowCount() - 1; i >= 0; i--) {
-                model.removeRow(i);
-            }
-            DefaultTableModel dtm = model;
-            Object tempRow[] = new Object[6];
-            tempRow[0] = book.getTitle();
-            tempRow[1] = book.getAuthor();
-            tempRow[2] = book.getYear();
-            tempRow[3] = book.getPublisher();
-            tempRow[4] = book.getStock();
-            tempRow[5] = book.getId();
-            dtm.addRow(tempRow);
-            table.setModel(dtm);
-        }
+    public Book search(int idBook) {
+        return bookRepository.searchBook(idBook);
     }
 
     @Override
-    public void search(JTable table, String title) {
-        Book book = repo.searchBook(title);
-        if (book != null) {
-            DefaultTableModel model = (DefaultTableModel) table.getModel();
-            for (int i = model.getRowCount() - 1; i >= 0; i--) {
-                model.removeRow(i);
-            }
-            DefaultTableModel dtm = model;
-            Object tempRow[] = new Object[6];
-            tempRow[0] = book.getTitle();
-            tempRow[1] = book.getAuthor();
-            tempRow[2] = book.getYear();
-            tempRow[3] = book.getPublisher();
-            tempRow[4] = book.getStock();
-            tempRow[5] = book.getId();
-            dtm.addRow(tempRow);
-            table.setModel(dtm);
-        }
+    public Book search(String title) {
+        return bookRepository.searchBook(title);
     }
 }

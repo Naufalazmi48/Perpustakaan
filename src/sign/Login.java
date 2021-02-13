@@ -7,18 +7,16 @@ package sign;
 
 import javax.swing.JOptionPane;
 import model.Admin;
-import repository.Repository;
+import repository.UserRepository;
 import repository.local.MySqlConnection;
 import ui.Menu;
 
 public class Login extends javax.swing.JFrame {
-    private final Repository repo;
     private final LoginInterface loginInf;
     
     public Login() {
         initComponents();
-        repo = new Repository(new MySqlConnection());
-        loginInf = new LoginImpl(repo);
+        loginInf = new LoginImpl(new UserRepository(new MySqlConnection()));
     }
 
     /**
@@ -116,7 +114,7 @@ public class Login extends javax.swing.JFrame {
             loginInf.login(tf_username.getText(), String.valueOf(pf_pass.getPassword()));
             if (Admin.AUTH == true) {
                 this.dispose();
-                new Menu(repo).setVisible(true);
+                new Menu().setVisible(true);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Pastikan semua data sudah di isi");

@@ -10,7 +10,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.Book;
 import model.User;
-import repository.Repository;
+import repository.IBookRepository;
+import repository.IHistoryRepository;
+import repository.IUserRepository;
 
 /**
  *
@@ -18,24 +20,27 @@ import repository.Repository;
  */
 public class ReturnImpl implements ReturnInterface {
 
-    private final Repository repo;
+    private final IHistoryRepository historyRepository;
+    private final IUserRepository userRepository;
+    private final IBookRepository bookRepository;
     private long totalDenda = 0;
     private final int denda = 10000;
 
-    public ReturnImpl(Repository repo) {
-        this.repo = repo;
+    public ReturnImpl(IHistoryRepository historyRepository, IUserRepository userRepository, IBookRepository bookRepository) {
+        this.historyRepository = historyRepository;
+        this.userRepository = userRepository;
+        this.bookRepository = bookRepository;
     }
+
 
     @Override
     public User insertNim(int nim) {
         listBook.clear();
         totalDenda = 0;
-        User user = repo.searchUser(nim);
+        User user = userRepository.searchUser(nim);
         if (user != null) {
-            if (!repo.searchUserBook(nim).isEmpty()) {
-                for (Book listBook1 : repo.searchUserBook(nim)) {
-                    listBook.add(listBook1);
-                }
+            if (!bookRepository.searchUserBook(nim).isEmpty()) {
+                listBook.addAll(bookRepository.searchUserBook(nim));
                 return user;
             }
         } else {
@@ -60,7 +65,7 @@ public class ReturnImpl implements ReturnInterface {
             String note = "==========================================\n\t\tDAFTAR BUKU YANG DIKEMBALIKAN\n";
             for (Book listBook1 : listReturn) {
                 //Ambil jumlah selisih hari expired dgn tgl sekarang
-                long lateDay = repo.countTimeLate(nim, listBook1.getId());
+                long lateDay = historyRepository.countTimeLate(nim, listBook1.getId());
                 idBook.add(listBook1.getId());
                 note += "\t" + listBook1.getTitle();
                 if (lateDay > 0) {
@@ -75,7 +80,7 @@ public class ReturnImpl implements ReturnInterface {
                 note += "\tTotal Denda : Rp."+totalDenda;
             }
             
-            repo.returnBookBorrowed(nim, idBook);
+            bookRepository.returnBookBorrowed(nim, idBook);
             note += "\n==========================================";
             JOptionPane.showMessageDialog(null, note);
             return true;

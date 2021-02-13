@@ -11,17 +11,13 @@ import ui.book.Buku;
 import ui.member.Anggota;
 import javax.swing.JOptionPane;
 import model.Admin;
-import repository.Repository;
 import sign.Login;
 import ui.returnbook.Pengembalian;
 
 public class Menu extends javax.swing.JFrame {
 
-    private final Repository repo;
-
-    public Menu(Repository repo) {
+    public Menu() {
         initComponents();
-        this.repo = repo;
     }
 
     public void exit() {
@@ -180,7 +176,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
-        new Anggota(repo).setVisible(true);
+        new Anggota().setVisible(true);
     }//GEN-LAST:event_userActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -188,19 +184,19 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
-        new Buku(repo).setVisible(true);
+        new Buku().setVisible(true);
     }//GEN-LAST:event_bookActionPerformed
 
     private void borrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrowActionPerformed
-        new Peminjaman(repo).setVisible(true);
+        new Peminjaman().setVisible(true);
     }//GEN-LAST:event_borrowActionPerformed
 
     private void historyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyActionPerformed
-       new Riwayat(repo).setVisible(true);
+       new Riwayat().setVisible(true);
     }//GEN-LAST:event_historyActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        new Pengembalian(repo).setVisible(true);
+        new Pengembalian().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     /**

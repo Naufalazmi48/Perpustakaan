@@ -8,7 +8,8 @@ package ui.borrow;
 import javax.swing.JOptionPane;
 import model.Book;
 import model.User;
-import repository.Repository;
+import repository.IBookRepository;
+import repository.IUserRepository;
 
 /**
  *
@@ -16,10 +17,12 @@ import repository.Repository;
  */
 public class BorrowImpl implements BorrowInterface {
 
-    private final Repository repo;
+    private final IUserRepository userRepository;
+    private final IBookRepository bookRepository;
 
-    public BorrowImpl(Repository repo) {
-        this.repo = repo;
+    public BorrowImpl(IUserRepository userRepository, IBookRepository bookRepository) {
+        this.userRepository = userRepository;
+        this.bookRepository = bookRepository;
     }
     private int limitBorrow;
 
@@ -27,12 +30,13 @@ public class BorrowImpl implements BorrowInterface {
     public boolean insertNim(int nim) {
         listBook.clear();
         limitBorrow = 3;
-        User user = repo.searchUser(nim);
+        User user = userRepository.searchUser(nim);
         if (user != null) {
-            if (repo.searchUserBook(nim).size() == 3) {
+            var countBook = bookRepository.searchUserBook(nim).size();
+            if (countBook == 3) {
                 JOptionPane.showMessageDialog(null, "Anda sudah meminjam 3 buku, silahkan kembalikan terlebih dahulu");
             } else {
-                limitBorrow -= repo.searchUserBook(nim).size();
+                limitBorrow -= countBook;
                 JOptionPane.showMessageDialog(null, "Peminjam atas nama : " + user.getName());
                 return true;
             }
@@ -42,14 +46,14 @@ public class BorrowImpl implements BorrowInterface {
 
     @Override
     public Book insertIdBook(int nim, int idBook) {
-        for (Book listBook1 : repo.searchUserBook(nim)) {
+        for (Book listBook1 : bookRepository.searchUserBook(nim)) {
             if (listBook1.getId() == idBook) {
                 JOptionPane.showMessageDialog(null, "Anda sudah meminjam buku ini sebelumnya, silahkan kembalikan terlebih dahulu");
                 return null;
             }
         }
         if (limitBorrow != 0) {
-            Book book = repo.searchBook(idBook);
+            Book book = bookRepository.searchBook(idBook);
             if (book != null && book.getStock() > 0) {
                 limitBorrow--;
                 listBook.add(book);
@@ -69,7 +73,7 @@ public class BorrowImpl implements BorrowInterface {
             JOptionPane.showMessageDialog(null, "Gagal menyimpan");
             return false;
         } else {
-            repo.borrowBook(nim, listBook);
+            bookRepository.borrowBook(nim, listBook);
         }
         return true;
     }

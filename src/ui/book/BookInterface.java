@@ -8,15 +8,17 @@ package ui.book;
 import javax.swing.JTable;
 import model.Book;
 
+import java.util.List;
+
 /**
  *
  * @author MATRIX COMPUTER
  */
 public interface BookInterface {
-public void read(JTable table);
-public boolean update(Book book,int oldId);
-public boolean create(Book book);
-public boolean delete(int idBook);
-public void search(JTable table,int idBook);
-public void search(JTable table,String title);
+ List<Book> read();
+ boolean update(Book book,int oldId);
+ boolean create(Book book);
+ boolean delete(int idBook);
+ Book search(int idBook);
+ Book search(String title);
 }

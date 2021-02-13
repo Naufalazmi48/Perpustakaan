@@ -7,9 +7,10 @@ package ui.history;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import model.Book;
 import model.History;
-import repository.Repository;
+import repository.IHistoryRepository;
+
+import java.util.List;
 
 /**
  *
@@ -17,28 +18,15 @@ import repository.Repository;
  */
 public class HistoryImpl implements HistoryInterface{
 
-    private final Repository repo;
-    public HistoryImpl(Repository repo){
-        this.repo = repo;
+    private final IHistoryRepository historyRepository;
+
+    public HistoryImpl(IHistoryRepository historyRepository) {
+        this.historyRepository = historyRepository;
     }
-    
+
     @Override
-    public void read(JTable table) {
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-        for (int i = model.getRowCount() - 1; i >= 0; i--) {
-            model.removeRow(i);
-        }
-        DefaultTableModel dtm = model;
-        for (History history : repo.getHistory()) {
-            Object tempRow[] = new Object[5];
-            tempRow[0] = history.getBook_title();
-            tempRow[1] = history.getUser_name();
-            tempRow[2] = history.getDate();
-            tempRow[3] = history.getStatus();
-            tempRow[4] = history.getAdmin_name();
-            dtm.addRow(tempRow);
-        }
-        table.setModel(dtm);
+    public List<History> read() {
+        return historyRepository.getHistory();
     }
     
 }

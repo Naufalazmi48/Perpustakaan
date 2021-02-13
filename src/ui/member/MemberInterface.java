@@ -8,14 +8,16 @@ package ui.member;
 import javax.swing.JTable;
 import model.User;
 
+import java.util.List;
+
 /**
  *
  * @author MATRIX COMPUTER
  */
 public interface MemberInterface {
-    public void read(JTable table);
-    public boolean update(User user,int oldNim);
-    public boolean delete(int nim);
-    public boolean create(User user);
-    public void search(JTable table,int nim);
+     List<User> read();
+     boolean update(User user,int oldNim);
+     boolean delete(int nim);
+     boolean create(User user);
+     User search(int nim);
 }

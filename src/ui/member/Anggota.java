@@ -7,8 +7,13 @@ package ui.member;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 import model.User;
-import repository.Repository;
+import repository.UserRepository;
+import repository.local.MySqlConnection;
+
+import java.util.List;
 
 /**
  *
@@ -19,17 +24,17 @@ public class Anggota extends javax.swing.JFrame {
     private final MemberInterface memberInf;
     private User callback = null;
 
-    public Anggota(Repository repo) {
+    public Anggota() {
         initComponents();
-        memberInf = new MemberImpl(repo);
-        memberInf.read(tb_user);
+        memberInf = new MemberImpl(new UserRepository(new MySqlConnection()));
+        read(memberInf.read());
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
 
     private User getResult() {
         User user = new User();
-        user.setNim(Integer.valueOf(tf_nim.getText()));
+        user.setNim(Integer.parseInt(tf_nim.getText()));
         user.setName(tf_name.getText());
         user.setProdi(tf_prodi.getText());
         user.setNumberPhone(tf_phone.getText());
@@ -52,6 +57,41 @@ public class Anggota extends javax.swing.JFrame {
         tf_phone.setText("");
         tf_prodi.setText("");
         tf_search.setText("");
+    }
+
+    private void read(List<User> userList){
+        DefaultTableModel model = (DefaultTableModel) tb_user.getModel();
+        for (int i = model.getRowCount() - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        for (User user : userList) {
+            Object tempRow[] = new Object[5];
+            tempRow[0] = user.getName();
+            tempRow[1] = user.getNim();
+            tempRow[2] = user.getProdi();
+            tempRow[3] = user.getNumberPhone();
+            tempRow[4] = user.getAddress();
+            model.addRow(tempRow);
+        }
+        tb_user.setModel(model);
+    }
+
+    private void search(User user){
+        if (user != null) {
+            DefaultTableModel model = (DefaultTableModel) tb_user.getModel();
+            for (int i = model.getRowCount() - 1; i >= 0; i--) {
+                model.removeRow(i);
+            }
+            Object tempRow[] = new Object[5];
+            tempRow[0] = user.getName();
+            tempRow[1] = user.getNim();
+            tempRow[2] = user.getProdi();
+            tempRow[3] = user.getNumberPhone();
+            tempRow[4] = user.getAddress();
+            model.addRow(tempRow);
+            tb_user.setModel(model);
+        }
+
     }
 
     private boolean invalid() {
@@ -305,7 +345,7 @@ public class Anggota extends javax.swing.JFrame {
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
         if (!invalid()) {
             if(memberInf.create(getResult())){
-             memberInf.read(tb_user);
+             read(memberInf.read());
             }
             clearUI();
         }
@@ -313,9 +353,9 @@ public class Anggota extends javax.swing.JFrame {
 
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         if (!invalid()) {
-            if (memberInf.delete(Integer.valueOf(tf_nim.getText()))) {
+            if (memberInf.delete(Integer.parseInt(tf_nim.getText()))) {
                 callback = null;
-                memberInf.read(tb_user);
+                read(memberInf.read());
             }
                 clearUI();
         } else {
@@ -327,7 +367,7 @@ public class Anggota extends javax.swing.JFrame {
         if (!invalid()) {
             if (memberInf.update(getResult(), callback.getNim())) {
                 callback = null;
-                memberInf.read(tb_user);
+                read(memberInf.read());
             }
                 clearUI();
         } else {
@@ -337,7 +377,7 @@ public class Anggota extends javax.swing.JFrame {
 
     private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
         if (!tf_search.getText().isEmpty()) {
-            memberInf.search(tb_user, Integer.valueOf(tf_search.getText()));
+            search(memberInf.search(Integer.parseInt(tf_search.getText())));
         } else {
             JOptionPane.showMessageDialog(null, "Masukan nim di dalam kolom pencarian");
         }
@@ -345,7 +385,7 @@ public class Anggota extends javax.swing.JFrame {
 
     private void tf_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_searchKeyReleased
         if (tf_search.getText().isEmpty()) {
-            memberInf.read(tb_user);
+            read(memberInf.read());
         }
     }//GEN-LAST:event_tf_searchKeyReleased
 
