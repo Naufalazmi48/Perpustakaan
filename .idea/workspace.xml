@@ -3,42 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="df69508f-eee8-489c-b574-ae0391064577" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/repository/BookDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/repository/Repository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/repository/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/repository/UserWithBookDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/BookImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/BookImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/HistoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/HistoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/Riwayat.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/Riwayat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/MemberImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/MemberImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/BookDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/RepositoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/IRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/UserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/UserWithBookDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sign/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sign/LoginImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign/LoginImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/book/BookImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/book/BookImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/book/BookInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/book/BookInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/book/Buku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/book/Buku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/borrow/BorrowImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/borrow/BorrowImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/borrow/Peminjaman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/borrow/Peminjaman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/history/HistoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/history/HistoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/history/HistoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/history/HistoryInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/history/Riwayat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/history/Riwayat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/member/Anggota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/member/Anggota.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/member/MemberImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/member/MemberImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/member/MemberInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/member/MemberInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/returnbook/Pengembalian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/returnbook/Pengembalian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/returnbook/ReturnImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/returnbook/ReturnImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/IRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Examine88 &lt;naufalazmi020@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -107,8 +77,16 @@
       <workItem from="1613035580669" duration="187000" />
       <workItem from="1613035820788" duration="2713000" />
       <workItem from="1613107572947" duration="1940000" />
-      <workItem from="1613174222729" duration="5036000" />
+      <workItem from="1613174222729" duration="5364000" />
     </task>
+    <task id="LOCAL-00001" summary="updated">
+      <created>1613179395502</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613179395502</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,5 +103,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
 </project>

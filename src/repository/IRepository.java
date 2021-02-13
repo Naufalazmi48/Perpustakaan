@@ -5,10 +5,6 @@
  */
 package repository;
 
-import java.util.List;
-import model.Book;
-import model.History;
-import model.User;
 
 /**
  *
