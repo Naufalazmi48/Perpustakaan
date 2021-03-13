@@ -5,28 +5,25 @@
  */
 package ui.member;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
 import model.User;
-import repository.IUserRepository;
 
 import java.util.List;
+import repository.IQueryRepository;
 
 /**
  * @author MATRIX COMPUTER
  */
 public class MemberImpl implements MemberInterface {
 
-    private final IUserRepository userRepository;
+    private final IQueryRepository<User> userRepository;
 
-    public MemberImpl(IUserRepository userRepository) {
+    public MemberImpl(IQueryRepository<User> userRepository) {
         this.userRepository = userRepository;
     }
 
     @Override
     public List<User> read() {
-        return userRepository.showAllUser();
+        return userRepository.readAll();
     }
 
     @Override
@@ -46,7 +43,7 @@ public class MemberImpl implements MemberInterface {
 
     @Override
     public User search(int nim) {
-        User user = userRepository.searchUser(nim);
+        User user = userRepository.search(nim);
         return user;
     }
 

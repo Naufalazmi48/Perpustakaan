@@ -9,10 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.Book;
+import model.History;
 import model.User;
-import repository.IBookRepository;
-import repository.IHistoryRepository;
-import repository.IUserRepository;
+import repository.IQueryRepository;
 
 /**
  *
@@ -20,13 +19,13 @@ import repository.IUserRepository;
  */
 public class ReturnImpl implements ReturnInterface {
 
-    private final IHistoryRepository historyRepository;
-    private final IUserRepository userRepository;
-    private final IBookRepository bookRepository;
+    private final IQueryRepository<History> historyRepository;
+    private final IQueryRepository<User> userRepository;
+    private final IQueryRepository<Book> bookRepository;
     private long totalDenda = 0;
     private final int denda = 10000;
 
-    public ReturnImpl(IHistoryRepository historyRepository, IUserRepository userRepository, IBookRepository bookRepository) {
+    public ReturnImpl(IQueryRepository<History> historyRepository, IQueryRepository<User> userRepository, IQueryRepository<Book> bookRepository) {
         this.historyRepository = historyRepository;
         this.userRepository = userRepository;
         this.bookRepository = bookRepository;
@@ -37,7 +36,7 @@ public class ReturnImpl implements ReturnInterface {
     public User insertNim(int nim) {
         listBook.clear();
         totalDenda = 0;
-        User user = userRepository.searchUser(nim);
+        User user = userRepository.search(nim);
         if (user != null) {
             if (!bookRepository.searchUserBook(nim).isEmpty()) {
                 listBook.addAll(bookRepository.searchUserBook(nim));

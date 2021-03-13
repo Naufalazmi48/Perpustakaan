@@ -5,13 +5,17 @@
  */
 package repository;
 
+import java.util.List;
+
 
 /**
  *
  * @author MATRIX COMPUTER
  */
-public interface IRepository<T> {
+public interface ICrudsRepository<T> {
     boolean create(T data);
+    List<T> readAll();
     boolean update(T newData, int oldData);
     boolean delete(int id);
+    T search(int id);
 }

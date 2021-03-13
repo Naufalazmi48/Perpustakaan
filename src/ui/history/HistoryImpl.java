@@ -5,12 +5,10 @@
  */
 package ui.history;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import model.History;
-import repository.IHistoryRepository;
 
 import java.util.List;
+import repository.IQueryRepository;
 
 /**
  *
@@ -18,15 +16,15 @@ import java.util.List;
  */
 public class HistoryImpl implements HistoryInterface{
 
-    private final IHistoryRepository historyRepository;
+    private final IQueryRepository<History> historyRepository;
 
-    public HistoryImpl(IHistoryRepository historyRepository) {
+    public HistoryImpl(IQueryRepository<History> historyRepository) {
         this.historyRepository = historyRepository;
     }
 
     @Override
     public List<History> read() {
-        return historyRepository.getHistory();
+        return historyRepository.readAll();
     }
     
 }

@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookRepository implements IBookRepository{
+public class BookRepository implements IQueryRepository<Book>{
     private final ConnectionDatabase db;
     private PreparedStatement ps;
     private ResultSet rs;
@@ -22,7 +22,7 @@ public class BookRepository implements IBookRepository{
     }
 
     @Override
-    public List<Book> showAllBook() {
+    public List<Book> readAll() {
         List<Book> listBook = new ArrayList<>();
         String query = "SELECT * FROM book";
         try {
@@ -112,7 +112,7 @@ public class BookRepository implements IBookRepository{
     }
 
     @Override
-    public Book searchBook(int id) {
+    public Book search(int id) {
         String query = "SELECT * FROM `book` WHERE id = ?";
         try {
             ps = db.getConection().prepareStatement(query);
@@ -198,7 +198,7 @@ public class BookRepository implements IBookRepository{
     }
 
     @Override
-    public Book searchBook(String data) {
+    public Book search(String data) {
         String query = "SELECT * FROM `book` WHERE title = ?";
         try {
             ps = db.getConection().prepareStatement(query);
@@ -221,5 +221,15 @@ public class BookRepository implements IBookRepository{
             db.closeConnection();
         }
         return null;
+    }
+
+    @Override
+    public void login(String username, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public long countTimeLate(int nim, int idBook) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

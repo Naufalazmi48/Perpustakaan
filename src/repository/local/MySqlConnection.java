@@ -13,13 +13,14 @@ import javax.swing.JOptionPane;
  *
  * @author MATRIX COMPUTER
  */
-public class MySqlConnection extends ConnectionDatabase {
+public class MySqlConnection implements ConnectionDatabase {
 
     private final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private final String db = "library";   //nama database
     private final String url = "jdbc:mysql://localhost/" + db;   //server link database
     private final String user = "root"; //mysql username
     private final String pass = ""; //mysql password
+    protected Connection con = null;
 
 
     @Override
@@ -37,5 +38,17 @@ public class MySqlConnection extends ConnectionDatabase {
             }
         }
         return con;
+    }
+
+    @Override
+    public void closeConnection() {
+        try {
+            if (con != null) {
+                con.close();
+                con = null;
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 }

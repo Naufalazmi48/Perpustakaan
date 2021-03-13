@@ -9,8 +9,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import model.Book;
 
-public class HistoryRepository implements IHistoryRepository{
+public class HistoryRepository implements IQueryRepository<History>{
     private final ConnectionDatabase db;
     private ResultSet rs;
 
@@ -19,7 +20,7 @@ public class HistoryRepository implements IHistoryRepository{
     }
 
     @Override
-    public List<History> getHistory() {
+    public List<History> readAll() {
         String query = "SELECT admin.name,date,status,book.title,user.name FROM `log` JOIN book ON (log.book_id = book.id) JOIN admin ON (log.admin_id = admin.id) JOIN user ON (log.user_nim = user.nim) ";
         List<History> listHistory = new ArrayList<>();
         try {
@@ -60,5 +61,50 @@ public class HistoryRepository implements IHistoryRepository{
             db.closeConnection();
         }
         return 0;
+    }
+
+    @Override
+    public History search(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean delete(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean update(History newData, int oldData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean create(History data) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void login(String username, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void returnBookBorrowed(int nim, List<Integer> idBook) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public History search(String title) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void borrowBook(int nim, List<Book> idBook) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Book> searchUserBook(int nim) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

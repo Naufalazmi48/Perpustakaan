@@ -11,8 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import model.Book;
 
-public class UserRepository implements IUserRepository{
+public class UserRepository implements IQueryRepository<User>{
     private final ConnectionDatabase db;
     private PreparedStatement ps;
     private ResultSet rs;
@@ -82,7 +83,7 @@ public class UserRepository implements IUserRepository{
     }
 
     @Override
-    public User searchUser(int nim) {
+    public User search(int nim) {
         String query = "SELECT * FROM user WHERE nim = ?";
         try {
             ps = db.getConection().prepareStatement(query);
@@ -128,7 +129,7 @@ public class UserRepository implements IUserRepository{
     }
 
     @Override
-    public List<User> showAllUser() {
+    public List<User> readAll() {
         List<User> listUser = new ArrayList<>();
         String query = "SELECT * FROM user";
         try {
@@ -150,5 +151,30 @@ public class UserRepository implements IUserRepository{
             db.closeConnection();
         }
         return null;
+    }
+
+    @Override
+    public long countTimeLate(int nim, int idBook) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void returnBookBorrowed(int nim, List<Integer> idBook) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public User search(String title) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void borrowBook(int nim, List<Book> idBook) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Book> searchUserBook(int nim) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

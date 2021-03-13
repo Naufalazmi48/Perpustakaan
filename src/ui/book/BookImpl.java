@@ -5,29 +5,26 @@
  */
 package ui.book;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
 import model.Book;
-import repository.IBookRepository;
 
 import java.util.List;
+import repository.IQueryRepository;
 
 /**
  * @author MATRIX COMPUTER
  */
 public class BookImpl implements BookInterface {
 
-    private final IBookRepository bookRepository;
+    private final IQueryRepository<Book> bookRepository;
 
-    public BookImpl(IBookRepository bookRepository) {
+    public BookImpl(IQueryRepository<Book> bookRepository) {
         this.bookRepository = bookRepository;
     }
 
 
     @Override
     public List<Book> read() {
-        return bookRepository.showAllBook();
+        return bookRepository.readAll();
     }
 
     @Override
@@ -47,11 +44,11 @@ public class BookImpl implements BookInterface {
 
     @Override
     public Book search(int idBook) {
-        return bookRepository.searchBook(idBook);
+        return bookRepository.search(idBook);
     }
 
     @Override
     public Book search(String title) {
-        return bookRepository.searchBook(title);
+        return bookRepository.search(title);
     }
 }

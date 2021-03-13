@@ -3,7 +3,83 @@
   <component name="ChangeListManager">
     <list default="true" id="df69508f-eee8-489c-b574-ae0391064577" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/model/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/model/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/model/History.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/model/History.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/Repository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/RepositoryInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/local/ConnectionDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/repository/local/ConnectionDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/repository/local/MySqlConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/repository/local/MySqlConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/sign/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/sign/Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/sign/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/sign/Login$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/sign/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/sign/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/sign/LoginImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/sign/LoginImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/sign/LoginInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/sign/LoginInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/Menu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/Menu$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/Menu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/Menu$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/Menu$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/Menu$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/Menu$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/Menu$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/BookImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/BookImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/BookInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/BookInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/book/Buku.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/book/Buku.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/BorrowInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/borrow/Peminjaman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/HistoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/HistoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/HistoryInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/HistoryInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/Riwayat$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/Riwayat$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/Riwayat$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/Riwayat$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/history/Riwayat.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/history/Riwayat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/Anggota.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/Anggota.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/MemberImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/MemberImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/member/MemberInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/member/MemberInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/Pengembalian.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/ui/returnbook/ReturnInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/local/ConnectionDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/local/ConnectionDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/local/MySqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/local/MySqlConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,23 +119,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Latihan" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -77,7 +138,8 @@
       <workItem from="1613035580669" duration="187000" />
       <workItem from="1613035820788" duration="2713000" />
       <workItem from="1613107572947" duration="1940000" />
-      <workItem from="1613174222729" duration="5364000" />
+      <workItem from="1613174222729" duration="6081000" />
+      <workItem from="1615296803313" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1613179395502</created>
@@ -86,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613179395502</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated">
+      <created>1613179641061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613179641061</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

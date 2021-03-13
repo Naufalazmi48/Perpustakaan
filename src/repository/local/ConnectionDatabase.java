@@ -5,24 +5,11 @@
  */
 package repository.local;
 import java.sql.Connection;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
-public abstract class ConnectionDatabase {
+public interface ConnectionDatabase {
 
-    protected Connection con = null;
+      Connection getConection();
 
-    abstract public Connection getConection();
-
-    public void closeConnection() {
-        try {
-            if (con != null) {
-                con.close();
-                con = null;
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }
+     void closeConnection();
     
 }

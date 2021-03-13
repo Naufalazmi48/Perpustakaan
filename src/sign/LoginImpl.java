@@ -6,7 +6,8 @@
 package sign;
 
 
-import repository.IUserRepository;
+import model.User;
+import repository.IQueryRepository;
 
 /**
  *
@@ -14,9 +15,9 @@ import repository.IUserRepository;
  */
 public class LoginImpl implements LoginInterface {
 
-    private final IUserRepository repo;
+    private final IQueryRepository<User> repo;
 
-    public LoginImpl(IUserRepository repo) {
+    public LoginImpl(IQueryRepository<User> repo) {
         this.repo = repo;
     }
 

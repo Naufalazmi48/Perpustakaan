@@ -8,8 +8,7 @@ package ui.borrow;
 import javax.swing.JOptionPane;
 import model.Book;
 import model.User;
-import repository.IBookRepository;
-import repository.IUserRepository;
+import repository.IQueryRepository;
 
 /**
  *
@@ -17,10 +16,10 @@ import repository.IUserRepository;
  */
 public class BorrowImpl implements BorrowInterface {
 
-    private final IUserRepository userRepository;
-    private final IBookRepository bookRepository;
+    private final IQueryRepository<User> userRepository;
+    private final IQueryRepository<Book> bookRepository;
 
-    public BorrowImpl(IUserRepository userRepository, IBookRepository bookRepository) {
+    public BorrowImpl(IQueryRepository<User> userRepository, IQueryRepository<Book> bookRepository) {
         this.userRepository = userRepository;
         this.bookRepository = bookRepository;
     }
@@ -30,7 +29,7 @@ public class BorrowImpl implements BorrowInterface {
     public boolean insertNim(int nim) {
         listBook.clear();
         limitBorrow = 3;
-        User user = userRepository.searchUser(nim);
+        User user = userRepository.search(nim);
         if (user != null) {
             var countBook = bookRepository.searchUserBook(nim).size();
             if (countBook == 3) {
@@ -53,7 +52,7 @@ public class BorrowImpl implements BorrowInterface {
             }
         }
         if (limitBorrow != 0) {
-            Book book = bookRepository.searchBook(idBook);
+            Book book = bookRepository.search(idBook);
             if (book != null && book.getStock() > 0) {
                 limitBorrow--;
                 listBook.add(book);
