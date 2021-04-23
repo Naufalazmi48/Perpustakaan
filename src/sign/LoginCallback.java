@@ -10,5 +10,5 @@ package sign;
  * @author MATRIX COMPUTER
  */
 public interface LoginCallback {
-    void isLogin(boolean statusLogin);
+    void hasLogin(boolean statusLogin);
 }

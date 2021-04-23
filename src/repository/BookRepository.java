@@ -74,27 +74,28 @@ public class BookRepository implements IQueryRepository<Book>{
     }
 
     @Override
-    public void borrowBook(int nim, List<Book> idBook) {
+    public boolean borrowBook(int nim, List<Book> idBook) {
         String query = "INSERT INTO `userwithbook` (admin_id,user_nim,book_id,date,expired) VALUES (?, ?, ?, NOW(), (NOW() + INTERVAL 7 DAY))";
         try {
             for (Book idBook1 : idBook) {
                 ps = db.getConection().prepareStatement(query);
-                ps.setInt(1, Admin.ADMIN_ID);
+                ps.setInt(1, new Admin().getADMIN_ID());
                 ps.setInt(2, nim);
                 ps.setInt(3, idBook1.getId());
                 ps.executeUpdate();
             }
-
             JOptionPane.showMessageDialog(null, "Berhasil meminjam");
+            return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
+            return false;
         } finally {
             db.closeConnection();
         }
     }
 
     @Override
-    public void returnBookBorrowed(int nim, List<Integer> idBook) {
+    public boolean returnBookBorrowed(int nim, List<Integer> idBook) {
         String query = "DELETE FROM `userwithbook` WHERE user_nim = ? AND book_id = ?";
         try {
             for (Integer idBook1 : idBook) {
@@ -104,8 +105,10 @@ public class BookRepository implements IQueryRepository<Book>{
                 ps.executeUpdate();
             }
             JOptionPane.showMessageDialog(null, "Buku berhasil dikembalikan!");
+            return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
+            return false;
         } finally {
             db.closeConnection();
         }
@@ -224,7 +227,7 @@ public class BookRepository implements IQueryRepository<Book>{
     }
 
     @Override
-    public void login(String username, String password) {
+    public boolean login(String username, String password) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -17,7 +17,7 @@ public class Login extends javax.swing.JFrame implements LoginCallback {
 
     public Login() {
         initComponents();
-        loginInf = new LoginImpl(new UserRepository(new MySqlConnection()), this);
+        loginInf = new LoginImpl(this);
     }
 
     /**
@@ -166,10 +166,9 @@ public class Login extends javax.swing.JFrame implements LoginCallback {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void isLogin(boolean statusLogin) {
+    public void hasLogin(boolean statusLogin) {
         if (statusLogin) {
-            JOptionPane.showMessageDialog(rootPane, "Selamat datang "
-                    + Admin.ADMIN_NAME);
+            JOptionPane.showMessageDialog(rootPane, "Berhasil login!");
             this.dispose();
             new Menu().setVisible(true);
             return;

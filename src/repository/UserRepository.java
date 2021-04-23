@@ -107,8 +107,9 @@ public class UserRepository implements IQueryRepository<User>{
     }
 
     @Override
-    public void login(String username, String password) {
+    public boolean login(String username, String password) {
         String query = "SELECT * FROM admin WHERE username = ? and password = ?";
+        Admin admin = new Admin();
         try {
             ps = db.getConection().prepareStatement(query);
             ps.setString(1, username);
@@ -116,12 +117,14 @@ public class UserRepository implements IQueryRepository<User>{
             rs = ps.executeQuery();
 
             rs.next();
-            Admin.ADMIN_USERNAME = rs.getString("username");
-            Admin.ADMIN_NAME = rs.getString("name");
-            Admin.ADMIN_ID = rs.getInt("id");
-            Admin.AUTH = true;
+            admin.setADMIN_USERNAME(rs.getString("username"));
+            admin.setADMIN_NAME(rs.getString("name"));
+            admin.setADMIN_ID(rs.getInt("id"));
+            admin.setAUTH(true);
+            return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Silahkan periksa kembali username dan password yang anda masukkan!");
+            return false;
         } finally {
             db.closeConnection();
         }
@@ -158,7 +161,7 @@ public class UserRepository implements IQueryRepository<User>{
     }
 
     @Override
-    public void returnBookBorrowed(int nim, List<Integer> idBook) {
+    public boolean returnBookBorrowed(int nim, List<Integer> idBook) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -168,7 +171,7 @@ public class UserRepository implements IQueryRepository<User>{
     }
 
     @Override
-    public void borrowBook(int nim, List<Book> idBook) {
+    public boolean borrowBook(int nim, List<Book> idBook) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

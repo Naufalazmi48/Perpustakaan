@@ -10,8 +10,40 @@ package model;
  * @author MATRIX COMPUTER
  */
 public class Admin {
-    public static boolean AUTH = false;
-    public static String ADMIN_USERNAME;
-    public static String ADMIN_NAME;
-    public static int ADMIN_ID;
+    private static boolean AUTH = false;
+    private static String ADMIN_USERNAME;
+    private static String ADMIN_NAME;
+    private static int ADMIN_ID;
+
+    public boolean isAUTH() {
+        return AUTH;
+    }
+
+    public void setAUTH(boolean AUTH) {
+        Admin.AUTH = AUTH;
+    }
+
+    public String getADMIN_USERNAME() {
+        return ADMIN_USERNAME;
+    }
+
+    public void setADMIN_USERNAME(String ADMIN_USERNAME) {
+        Admin.ADMIN_USERNAME = ADMIN_USERNAME;
+    }
+
+    public String getADMIN_NAME() {
+        return ADMIN_NAME;
+    }
+
+    public void setADMIN_NAME(String ADMIN_NAME) {
+        Admin.ADMIN_NAME = ADMIN_NAME;
+    }
+
+    public int getADMIN_ID() {
+        return ADMIN_ID;
+    }
+
+    public void setADMIN_ID(int ADMIN_ID) {
+        Admin.ADMIN_ID = ADMIN_ID;
+    }
 }

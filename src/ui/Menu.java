@@ -24,10 +24,11 @@ public class Menu extends javax.swing.JFrame {
         int conf = JOptionPane.showConfirmDialog(null, "Yakin untuk keluar?", "Logout",
                 JOptionPane.YES_NO_OPTION);
         if (conf == JOptionPane.YES_OPTION) {
-            Admin.AUTH = false;
-            Admin.ADMIN_ID = -1;
-            Admin.ADMIN_NAME = "";
-            Admin.ADMIN_USERNAME = "";
+            Admin admin = new Admin();
+            admin.setAUTH(false);
+            admin.setADMIN_ID(-1);
+            admin.setADMIN_USERNAME("");
+            admin.setADMIN_NAME("");
             this.dispose();
             new Login().setVisible(true);
         }

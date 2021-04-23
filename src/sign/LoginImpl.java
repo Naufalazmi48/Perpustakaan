@@ -9,23 +9,24 @@ package sign;
 import model.Admin;
 import model.User;
 import repository.IQueryRepository;
+import repository.UserRepository;
+import repository.local.MySqlConnection;
 
 /**
  *
  * @author MATRIX COMPUTER
  */
 public class LoginImpl implements LoginInterface {
-    LoginCallback callback;
-    private final IQueryRepository<User> repo;
+    private LoginCallback callback;
+    private final IQueryRepository<User> repo = 
+            new UserRepository(new MySqlConnection());
 
-    public LoginImpl(IQueryRepository<User> repo, LoginCallback callback) {
-        this.repo = repo;
+    public LoginImpl(LoginCallback callback) {
         this.callback = callback;
     }
 
     @Override
     public void login(String username, String password) {
-       repo.login(username, password);
-       callback.isLogin(Admin.AUTH);
+       callback.hasLogin(repo.login(username, password));
     }
 }

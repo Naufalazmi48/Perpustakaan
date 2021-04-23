@@ -84,12 +84,12 @@ public class HistoryRepository implements IQueryRepository<History>{
     }
 
     @Override
-    public void login(String username, String password) {
+    public boolean login(String username, String password) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void returnBookBorrowed(int nim, List<Integer> idBook) {
+    public boolean returnBookBorrowed(int nim, List<Integer> idBook) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -99,7 +99,7 @@ public class HistoryRepository implements IQueryRepository<History>{
     }
 
     @Override
-    public void borrowBook(int nim, List<Book> idBook) {
+    public boolean borrowBook(int nim, List<Book> idBook) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

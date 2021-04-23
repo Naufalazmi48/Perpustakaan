@@ -29,15 +29,15 @@ public interface IQueryRepository<T> extends ICrudsRepository<T> {
     @Override
     public boolean create(T data);
     
-    void login(String username, String password);
+    boolean login(String username, String password);
     
     long countTimeLate(int nim,int idBook);
     
-    void returnBookBorrowed(int nim, List<Integer> idBook);
+    boolean returnBookBorrowed(int nim, List<Integer> idBook);
     
     public T search(String title);
     
-    void borrowBook(int nim, List<Book> idBook);
+    boolean borrowBook(int nim, List<Book> idBook);
     
     List<Book> searchUserBook(int nim);
 }
