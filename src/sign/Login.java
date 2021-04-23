@@ -6,18 +6,16 @@
 package sign;
 
 import javax.swing.JOptionPane;
-import model.Admin;
-import repository.UserRepository;
-import repository.local.MySqlConnection;
 import ui.Menu;
 
 public class Login extends javax.swing.JFrame implements LoginCallback {
 
-    private final LoginInterface loginInf;
+    private final LoginImpl loginInf;
 
     public Login() {
         initComponents();
-        loginInf = new LoginImpl(this);
+        loginInf = new LoginImpl();
+        loginInf.setView(this);
     }
 
     /**

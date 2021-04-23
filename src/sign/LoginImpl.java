@@ -17,16 +17,16 @@ import repository.local.MySqlConnection;
  * @author MATRIX COMPUTER
  */
 public class LoginImpl implements LoginInterface {
-    private LoginCallback callback;
+    private LoginCallback view;
     private final IQueryRepository<User> repo = 
             new UserRepository(new MySqlConnection());
 
-    public LoginImpl(LoginCallback callback) {
-        this.callback = callback;
+    public void setView(Login view) {
+        this.view = view;
     }
 
     @Override
     public void login(String username, String password) {
-       callback.hasLogin(repo.login(username, password));
+       view.hasLogin(repo.login(username, password));
     }
 }
