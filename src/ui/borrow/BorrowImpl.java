@@ -31,7 +31,7 @@ public class BorrowImpl implements BorrowInterface {
         limitBorrow = 3;
         User user = userRepository.search(nim);
         if (user != null) {
-            var countBook = bookRepository.searchUserBook(nim).size();
+            int countBook = bookRepository.searchUserBook(nim).size();
             if (countBook == 3) {
                 JOptionPane.showMessageDialog(null, "Anda sudah meminjam 3 buku, silahkan kembalikan terlebih dahulu");
             } else {

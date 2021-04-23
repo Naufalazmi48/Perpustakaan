@@ -11,12 +11,13 @@ import repository.UserRepository;
 import repository.local.MySqlConnection;
 import ui.Menu;
 
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame implements LoginCallback {
+
     private final LoginInterface loginInf;
-    
+
     public Login() {
         initComponents();
-        loginInf = new LoginImpl(new UserRepository(new MySqlConnection()));
+        loginInf = new LoginImpl(new UserRepository(new MySqlConnection()), this);
     }
 
     /**
@@ -112,10 +113,7 @@ public class Login extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         if (!tf_username.getText().isEmpty() && !String.valueOf(pf_pass.getPassword()).isEmpty()) {
             loginInf.login(tf_username.getText(), String.valueOf(pf_pass.getPassword()));
-            if (Admin.AUTH == true) {
-                this.dispose();
-                new Menu().setVisible(true);
-            }
+
         } else {
             JOptionPane.showMessageDialog(null, "Pastikan semua data sudah di isi");
         }
@@ -166,4 +164,17 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField pf_pass;
     private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void isLogin(boolean statusLogin) {
+        if (statusLogin) {
+            JOptionPane.showMessageDialog(rootPane, "Selamat datang "
+                    + Admin.ADMIN_NAME);
+            this.dispose();
+            new Menu().setVisible(true);
+            return;
+        }
+        JOptionPane.showMessageDialog(rootPane, "Oops! silahkan periksa"
+                + " kembali username dan password anda");
+    }
 }

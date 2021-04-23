@@ -120,7 +120,6 @@ public class UserRepository implements IQueryRepository<User>{
             Admin.ADMIN_NAME = rs.getString("name");
             Admin.ADMIN_ID = rs.getInt("id");
             Admin.AUTH = true;
-            JOptionPane.showMessageDialog(null, "Anda berhasil login sebagai " + Admin.ADMIN_USERNAME);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Silahkan periksa kembali username dan password yang anda masukkan!");
         } finally {

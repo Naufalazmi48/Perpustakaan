@@ -6,6 +6,7 @@
 package sign;
 
 
+import model.Admin;
 import model.User;
 import repository.IQueryRepository;
 
@@ -14,15 +15,17 @@ import repository.IQueryRepository;
  * @author MATRIX COMPUTER
  */
 public class LoginImpl implements LoginInterface {
-
+    LoginCallback callback;
     private final IQueryRepository<User> repo;
 
-    public LoginImpl(IQueryRepository<User> repo) {
+    public LoginImpl(IQueryRepository<User> repo, LoginCallback callback) {
         this.repo = repo;
+        this.callback = callback;
     }
 
     @Override
     public void login(String username, String password) {
        repo.login(username, password);
+       callback.isLogin(Admin.AUTH);
     }
 }
