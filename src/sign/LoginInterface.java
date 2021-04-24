@@ -10,5 +10,5 @@ package sign;
  * @author MATRIX COMPUTER
  */
 public interface LoginInterface {
-    public void login(String username,String password);
+    void onLogin(boolean statusLogin);
 }

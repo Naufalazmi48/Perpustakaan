@@ -8,13 +8,13 @@ package sign;
 import javax.swing.JOptionPane;
 import ui.Menu;
 
-public class Login extends javax.swing.JFrame implements LoginCallback {
+public class Login extends javax.swing.JFrame implements LoginInterface {
 
-    private final LoginImpl loginInf;
+    private final ControllerImpl loginInf;
 
     public Login() {
         initComponents();
-        loginInf = new LoginImpl();
+        loginInf = new ControllerImpl();
         loginInf.setView(this);
     }
 
@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame implements LoginCallback {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void hasLogin(boolean statusLogin) {
+    public void onLogin(boolean statusLogin) {
         if (statusLogin) {
             JOptionPane.showMessageDialog(rootPane, "Berhasil login!");
             this.dispose();

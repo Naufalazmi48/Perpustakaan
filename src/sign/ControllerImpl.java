@@ -6,7 +6,6 @@
 package sign;
 
 
-import model.Admin;
 import model.User;
 import repository.IQueryRepository;
 import repository.UserRepository;
@@ -16,8 +15,8 @@ import repository.local.MySqlConnection;
  *
  * @author MATRIX COMPUTER
  */
-public class LoginImpl implements LoginInterface {
-    private LoginCallback view;
+public class ControllerImpl implements Controllers {
+    private LoginInterface view;
     private final IQueryRepository<User> repo = 
             new UserRepository(new MySqlConnection());
 
@@ -27,6 +26,6 @@ public class LoginImpl implements LoginInterface {
 
     @Override
     public void login(String username, String password) {
-       view.hasLogin(repo.login(username, password));
+       view.onLogin(repo.login(username, password));
     }
 }

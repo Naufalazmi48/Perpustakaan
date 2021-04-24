@@ -9,6 +9,6 @@ package sign;
  *
  * @author MATRIX COMPUTER
  */
-public interface LoginCallback {
-    void hasLogin(boolean statusLogin);
+public interface Controllers {
+    public void login(String username,String password);
 }
